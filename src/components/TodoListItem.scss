@@ -11,6 +11,10 @@
     svg {
       // 아이콘
       font-size: 1.5rem;
+      transition: 0.1s all ease-in;
+      &:hover {
+        color: #818181;
+      }
     }
     .text {
       margin-left: 0.5rem;
@@ -19,10 +23,10 @@
     // 체크되었을 때 보여줄 스타일
     &.checked {
       svg {
-        color: #22b8cf;
+        color: #818181;
       }
       .text {
-        color: #adb5bd;
+        color: #818181;
         text-decoration: line-through;
       }
     }
@@ -33,13 +37,10 @@
     font-size: 1.5rem;
     color: #ff6b6b;
     cursor: pointer;
+    transition: 0.1s all ease-in;
     &:hover {
-      color: #ff8787;
+      color: #ff1010;
     }
   }
 
-  // 엘리먼트 사이사이에 테두리를 넣어 줌
-  & + & {
-    border-top: 1px solid #dee2e6;
-  }
 }

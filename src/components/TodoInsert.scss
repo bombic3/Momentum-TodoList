@@ -1,15 +1,16 @@
 .TodoInsert {
   // background: #495057;
   display: flex;
+  border-bottom: 3px solid #f3f3f3;
   input {
     // 기본 스타일 초기화
     background: none;
     outline: none;
     border: none;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
     font-size: 1.125rem;
     line-height: 1.5;
-    color: #adb5bd;
+    color: #f3f3f3;
     &::placeholder {
       color: #858585;
     }
@@ -21,7 +22,7 @@
     background: none;
     outline: none;
     border: none;
-    color: white;
+    color: #f3f3f3;
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 1.5rem;
