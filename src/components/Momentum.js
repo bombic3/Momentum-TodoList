@@ -4,8 +4,11 @@ import './Momentum.scss';
 
 const Momentum = () => {
   return (
-    <div>
-      <Clock className='clock' format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+    <div className='clock'>
+      <Clock
+        format={'HH:mm:ss'}
+        ticking={true}
+        timezone={'Asia/Seoul'} />
     </div>
   );
 };
