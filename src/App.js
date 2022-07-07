@@ -4,16 +4,11 @@ import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import TodoTemplate from './components/TodoTemplate';
 
-// [제거기능]
-// 지우기 기능 구현하기
-//   - 배열의 불변성 지키면서 배열 원소 제거해야 할 경우 배열 내장 함수인 filter 사용
-// 배열 내장 함수 filter
-//  - filter 함수에는 조건을 확인해 주는 함수를 파라미터를 넣어 줘야 함
-//  - 파라미터로 넣는 함수는 true 혹은 false 값 반환해야 하며, 여기서 true를 반환하는 경우만 새로운 배열에 포함됨
-// todos 배열에서 id로 항목 지우기
-//  - filter 함수 사용하여 onRemove 함수 작성
-//  - App 컴포넌트에 id를 파라미터로 받아와 같은 id를 가진 항목을 todos 배열에서 지우는 함수
-//  - 이 함수를 만들고 나서 TodoList의 props로 설정해주기
+// [수정기능]
+// 수정 기능
+// - App 컴포넌트에 onToggle 함수 생성
+// - 해당 함수 TodoList 컴포넌트에 props로 넣어주기
+// - TodoList를 통해 TodoListItem까지 전달
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -60,13 +55,24 @@ const App = () => {
     [todos],
   );
 
+  // onToggle 작성
+  const onToggle = useCallback(
+    id => {
+      setTodos(
+        todos.map(todo =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
+      );
+    },
+    [todos],
+  );
 
   return (
     <div>
       <Momentum />
       <TodoTemplate>
         <TodoInsert onInsert={onInsert} />
-        <TodoList todos={todos} onRemove={onRemove} />
+        <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
       </TodoTemplate>
     </div>
   );

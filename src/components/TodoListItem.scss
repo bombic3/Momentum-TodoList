@@ -13,21 +13,30 @@
       font-size: 1.5rem;
       transition: 0.1s all ease-in;
       &:hover {
-        color: #818181;
+        color: #fff;
       }
     }
     .text {
       margin-left: 0.5rem;
       flex: 1; // 차지할 수 있는 영역 모두 차지
+      &:hover {
+        color: #fff;
+      }
     }
     // 체크되었을 때 보여줄 스타일
     &.checked {
       svg {
         color: #818181;
+        &:hover {
+          color: #a9a9a9;
+        }
       }
       .text {
         color: #818181;
         text-decoration: line-through;
+        &:hover {
+          color: #a9a9a9;
+        }
       }
     }
   }
